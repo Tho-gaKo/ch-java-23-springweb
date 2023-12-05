@@ -18,11 +18,11 @@ public class HelloController {
 
     @GetMapping("/greeting")
     public String greetSomeone(@RequestParam(required = false) String name) {
-        return "hallo" ;
+        return "hallo " + name;
     }
     @GetMapping("/greeting/{name}")
-    public String greetName(@RequestParam(required = false) String name) {
-        return "hallo" + name;
+    public String greetName(@PathVariable String name) {
+        return "hallo " + name;
     }
     @GetMapping("add-something")
     @ResponseStatus(HttpStatus.CREATED)
